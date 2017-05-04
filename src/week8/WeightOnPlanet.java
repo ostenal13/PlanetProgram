@@ -45,17 +45,39 @@ public class WeightOnPlanet extends Application {
 
         tfEarth = new TextField();
         tfEarth.setPromptText("Enter your weight");
-        gridPane.add(tfEarth, 1, 0);
+        gridPane.add(tfEarth, 0, 1);
 
         Label lbMoon = new Label("Moon");
         lbMoon.setStyle("-fx-font-size: 18pt; -fx-text-fill: #0000ff;");
-        gridPane.add(lbMoon, 0, 1);
+        gridPane.add(lbMoon, 1, 0);
 
         tfMoon = new TextField();
         tfMoon.setEditable(false);
         gridPane.add(tfMoon, 1, 1);
 
-        // add other planets here later
+        Label lbVenus = new Label("Venus");
+        lbVenus.setStyle("-fx-font-size: 18pt; -fx-text-fill: #0000ff;");
+        gridPane.add(lbVenus, 2, 0);
+
+        tfVenus = new TextField();
+        tfVenus.setEditable(false);
+        gridPane.add(tfVenus, 2, 1);
+        
+        Label lbMars = new Label("Mars");
+        lbMars.setStyle("-fx-font-size: 18pt; -fx-text-fill: #0000ff;");
+        gridPane.add(lbMars, 3, 0);
+
+        tfMars = new TextField();
+        tfMars.setEditable(false);
+        gridPane.add(tfMars, 3, 1);
+        
+        Label lbJupiter = new Label("Jupiter");
+        lbJupiter.setStyle("-fx-font-size: 18pt; -fx-text-fill: #0000ff;");
+        gridPane.add(lbJupiter, 4, 0);
+
+        tfJupiter = new TextField();
+        tfJupiter.setEditable(false);
+        gridPane.add(tfJupiter, 4, 1);
         
         Button btn = new Button();
         btn.setText("Calculate");
@@ -83,7 +105,15 @@ public class WeightOnPlanet extends Application {
         double weight = Double.parseDouble(tfEarth.getText());
         double moonWeight = weight * GRAVITY_MOON;
         tfMoon.setText(String.format("%.2f", moonWeight));
-        // do other planets here...
+        
+        double venusWeight = weight * GRAVITY_VENUS;
+        tfVenus.setText(String.format("%.2f", venusWeight));
+        
+        double marsWeight = weight * GRAVITY_MARS;
+        tfMars.setText(String.format("%.2f", marsWeight));
+        
+        double jupiterWeight = weight * GRAVITY_JUPITER;
+        tfJupiter.setText(String.format("%.2f", jupiterWeight));
     }
     
     /**
